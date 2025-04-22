@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parking Buddy</title>
+    <style>
+      /* universal element */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* allows body to scroll */
+      body {
+        font-family: "Georgia", serif;
+        height: 100vh;
+        overflow-y: auto; /* scrollbar */
+        background-color: #f5f5f5;
+      }
+
+      /* Navigation Bar */
+      .navbar {
+        background: #ffc107;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 16px;
+        font-weight: bold;
+      }
+
+      .navbar a:hover {
+        background-color: #ffeb3b;
+        border-radius: 4px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      /* Home */
+      .home {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+      }
+
+      /* Left Section */
+      .left-section {
+        flex: 1;
+        padding-right: 50px;
+      }
+
+      .logo {
+        width: 250px;
+        height: auto;
+        margin-left: 150px;
+      }
+
+      h1 {
+        font-size: 35px;
+        color: #333;
+        margin-top: 50px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+        margin-bottom: 50px;
+        margin-left: 100px;
+      }
+
+      .button {
+        background-color: #fedd66;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        padding: 15px 0;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        font-size: 24px;
+        font-weight: bolder;
+        border: 3px solid #333;
+        width: 270px;
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #84c65b;
+      }
+
+      .button span {
+        font-weight: normal;
+        font-size: 17px;
+        margin-left: 10px;
+      }
+
+      /* Right Section */
+      .right-section {
+        flex: 1;
+        text-align: right;
+      }
+
+      .right-section img {
+        width: 70%;
+        height: auto;
+      }
+
+      /* About Us and FAQ */
+      .about,
+      .faq {
+        padding: 20px;
+        background: #fff;
+        margin: 20px auto;
+        max-width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* About Us Section Styling */
+      .about {
+        padding: 20px;
+        background: #fff;
+        margin: 20px 0;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      /* Founder Cards Container */
+      .founders-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      /* Founder Card Styles */
+      .founder-card {
+        width: 30%;
+        height: 200px;
+        perspective: 1000px;
+        position: relative;
+      }
+
+      .founder-front,
+      .founder-back {
+        width: 100%;
+        height: 100%;
+        background-color: #fedd66;
+        color: black;
+        border: 2px solid #333;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      /* Front side (name) */
+      .founder-front {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      /* Back side (description) */
+      .founder-back {
+        font-size: 16px;
+        text-align: center;
+        transform: rotateY(180deg);
+      }
+
+      /* Flip card on hover */
+      .founder-card:hover .founder-front {
+        transform: rotateY(180deg);
+      }
+
+      .founder-card:hover .founder-back {
+        transform: rotateY(0);
+      }
+
+      /* Footer Section */
+      .footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .footer a {
+        color: #ffc107;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+        <span>Parking Buddy</span>
+      </div>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">Our Founders</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="home" id="home">
+      <div class="left-section">
+        <img src="logo.png" alt="Parking Buddy Logo" class="logo" />
+        <h1>Smart Parking Finder Application</h1>
+        <div class="buttons">
+          <a href="Frame2.html" class="button">
+            Register <span>(For new User)</span>
+          </a>
+          <a href="Frame3.html" class="button">
+            Login <span>(For existing User)</span>
+          </a>
+        </div>
+      </div>
+      <div class="right-section">
+        <img src="modes.png" alt="Parking Buddy App Preview" />
+      </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about" id="about">
+      <h2>Our Founders</h2>
+      <div class="founders-container">
+        <!-- Founder 1: Kartik -->
+        <div class="founder-card">
+          <div class="founder-front">
+            <h3>Kartik - The Tech Genius</h3>
+          </div>
+          <div class="founder-back">
+            <p>
+                Kartik is the techie mastermind responsible for the development and smooth operation of Parking Buddy's website and functionalities. 
+                His expertise in technology ensures that every feature runs seamlessly, making the user experience as smooth and reliable as possible.
+            </p>
+          </div>
+        </div>
+
+        <!-- Founder 2: Sami -->
+        <div class="founder-card">
+          <div class="founder-front">
+            <h3>Sami - The Admin & Coding Mastermind</h3>
+          </div>
+          <div class="founder-back">
+            <p>
+                Sami handles the app's internal databases and backend operations, making sure the core systems of Parking Buddy are efficient and secure.
+                 Known as the mastermind behind the coding, Sami's work ensures that everything functions like clockwork.
+            </p>
+          </div>
+        </div>
+
+        <!-- Founder 3: Aryan -->
+        <div class="founder-card">
+          <div class="founder-front">
+            <h3>Aryan - The Marketing Genius</h3>
+          </div>
+          <div class="founder-back">
+            <p>
+                Aryan is the marketing expert who has put Parking Buddy on the map. 
+                With his skills in pitching and promotion, Aryan has successfully spread the word about the app, making it known to a wide audience and ensuring its growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <h3>How do I register?</h3>
+      <p>
+        Click on the "Register" button, fill in your details, and get started
+        with Parking Buddy.
+      </p>
+      <h3>Is the app free to use?</h3>
+      <p>
+        Yes, Parking Buddy is free to use with optional premium features for
+        advanced users.
+      </p>
+      <h3>Is there any reservation system?</h3>
+      <p>No, Our app only allows you to check the available parking spaces.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <p>&copy; 2024 Parking Buddy. All rights reserved.</p>
+      <a href="#faq">FAQ</a>
+      <a href="#">Licenses</a>
+      <a href="#">Help Desk</a>
+    </div> 
+  </body>
+</html>
