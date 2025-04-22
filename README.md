@@ -11,9 +11,6 @@ An academic project built as part of the Software Engineering course at VIT Vell
 - [Features](#-features)
 - [Software Engineering Process](#-software-engineering-process)
 - [How to Run](#-how-to-run)
-- [Folder Structure](#-folder-structure)
-- [Authors](#-authors)
-- [Acknowledgements](#-acknowledgements)
 
 ---
 
@@ -79,3 +76,12 @@ This project was built following a structured software engineering lifecycle:
    ```bash
    git clone https://github.com/your-username/parking-space-finder.git
    cd parking-space-finder
+
+2. **Install Dependencies**
+   ```bash
+    pip install opencv-python numpy
+
+ 3. **Run the script**
+     ```bash
+     python main.py
+
