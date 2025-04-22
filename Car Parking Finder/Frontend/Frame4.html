@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parking Buddy</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        position: relative;
+        text-align: center;
+        color: white;
+      }
+
+      .image {
+        width: 100%;
+      }
+
+      .back-arrow {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+
+      .back-arrow img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .centered {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      input[type="text"] {
+        font-size: 40px;
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+        width: 400px;
+        text-align: center;
+        background-color: #f1c40f;
+        color: black;
+        font-weight: bold;
+      }
+
+      .button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #f1c40f;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: #937709;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Back Arrow -->
+      <div class="back-arrow">
+        <a href="javascript:history.back()">
+          <img src="Car Parking Finder/Asset/icons8-back-arrow-51.png" alt="Back" />
+        </a>
+      </div>
+      <!-- Main Image and Content -->
+      <img src="Car Parking Finder/Asset/Cantfind1.jpg" alt="Img" class="image" />
+      <div class="centered">
+        <form id="locationForm" action="Frame5.html" method="GET">
+          <input type="text" id="locationInput" name="location" placeholder="Enter Your Location" required />
+          <div>
+            <button type="submit" class="button">Location*</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- JavaScript Code for the Google map -->
+
+    <script>
+      document.getElementById('locationForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent page reload
+          
+          // Get the location input
+          const location = document.getElementById('locationInput').value;
+
+          // Redirect to the map page with the location as a URL parameter
+          window.location.href = `Frame5.html?location=${encodeURIComponent(location)}`;
+      });
+  </script>
+
+  </body>
+</html>
